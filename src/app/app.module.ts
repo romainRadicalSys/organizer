@@ -25,6 +25,7 @@ import { PathNotFoundComponent } from './path-not-found/path-not-found.component
 import { TodosComponent } from './todos/todos.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { LoginComponent } from './login/login.component';
+import { DataService } from './core/data.service';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, PathNotFoundComponent, TodosComponent, MainMenuComponent, LoginComponent],
@@ -46,7 +47,7 @@ import { LoginComponent } from './login/login.component';
     MatProgressSpinnerModule,
     HttpModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

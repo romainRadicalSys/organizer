@@ -12,7 +12,7 @@ import { ITodo } from '../shared/interfaces';
 
 @Injectable()
 export class DataService {
-  baseUrl: string = 'http://localhost:7777/api/getTodos';
+  baseUrl: string = 'api/getTodos';
   constructor(private http: Http) {}
 
   getTodos(): Observable<ITodo[]> {
