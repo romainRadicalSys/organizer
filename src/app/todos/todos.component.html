@@ -1,7 +1,19 @@
-<p>
-  todos works!
-</p>
-
+<div class='todos--header' *ngIf='!showNewTodo'>
+  <i class="material-icons" (click)='showNewTodoSection()'>
+    add
+  </i>
+  <span> add Task </span>
+</div>
+<mat-form-field class="example-form-field" *ngIf='showNewTodo'>
+  <input matInput type="text" name='todoName' id='todoName' placeholder="What do you want to get done" [(ngModel)]="newTodo">
+  <button mat-button *ngIf="newTodo" matSuffix mat-icon-button aria-label="Clear" (click)="newTodo=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+<div class='btn-group' *ngIf='showNewTodo'>
+  <button mat-raised-button color="warn" (click)='addTodo()'>Add</button>
+  <button mat-raised-button color="accent" (click)='showNewTodoSection()'>Cancel</button>
+</div>
 <ul *ngFor="let todo of todos">
-  <li>{{todo.name}}</li>
+  <app-todo [todos]='todo'></app-todo>
 </ul>

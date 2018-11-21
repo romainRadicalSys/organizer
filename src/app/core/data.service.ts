@@ -24,4 +24,14 @@ export class DataService {
       })
     );
   }
+
+  insertTodo(todo: ITodo): Observable<ITodo> {
+    return this.http.post('api/addTodo', todo).pipe(
+      map((res: Response) => {
+        const data = res.json();
+        console.log('insert new todo');
+        return data.todo;
+      })
+    );
+  }
 }

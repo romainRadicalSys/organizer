@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -24,11 +25,12 @@ import { HomeComponent } from './home/home.component';
 import { PathNotFoundComponent } from './path-not-found/path-not-found.component';
 import { TodosComponent } from './todos/todos.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { LoginComponent } from './login/login.component';
 import { DataService } from './core/data.service';
+import { AdminModule } from './admin/admin.module';
+import { TodoComponent } from './todos/todo/todo.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PathNotFoundComponent, TodosComponent, MainMenuComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, PathNotFoundComponent, TodosComponent, MainMenuComponent, TodoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -45,7 +47,9 @@ import { DataService } from './core/data.service';
     MatDialogModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    HttpModule
+    HttpModule,
+    AdminModule,
+    FormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
