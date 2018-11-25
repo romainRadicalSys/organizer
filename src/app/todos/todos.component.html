@@ -4,16 +4,24 @@
   </i>
   <span> add Task </span>
 </div>
-<mat-form-field class="example-form-field" *ngIf='showNewTodo'>
-  <input matInput type="text" name='todoName' id='todoName' placeholder="What do you want to get done" [(ngModel)]="newTodo">
+<form action="/api/addTodo" (ngSubmit)="submit()" method="POST" *ngIf='showNewTodo' class=todos--create>
+
+  <mat-form-field class="example-form-field">
+    <input matInput type="text" name='name' id='name' placeholder="What do you want to get done" [(ngModel)]="newtodo.name">
+  </mat-form-field>
+  <mat-form-field class="example-form-field">
+    <input matInput type="text" name='comments' id='comments' placeholder="Comments" [(ngModel)]="newtodo.comments">
+  </mat-form-field>
   <button mat-button *ngIf="newTodo" matSuffix mat-icon-button aria-label="Clear" (click)="newTodo=''">
     <mat-icon>close</mat-icon>
   </button>
-</mat-form-field>
-<div class='btn-group' *ngIf='showNewTodo'>
-  <button mat-raised-button color="warn" (click)='addTodo()'>Add</button>
-  <button mat-raised-button color="accent" (click)='showNewTodoSection()'>Cancel</button>
-</div>
+
+  <div class='btn-group' *ngIf='showNewTodo'>
+    <button mat-raised-button color="warn" type='submit'>Add</button>
+    <button mat-raised-button color="accent" (click)='showNewTodoSection()'>Cancel</button>
+  </div>
+</form>
+
 <ul *ngFor="let todo of todos">
   <app-todo [todos]='todo'></app-todo>
 </ul>

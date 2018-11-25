@@ -1,8 +1,22 @@
 const mongoose = require('mongoose');
 const Todo = mongoose.model('Todo');
 
+
+
 exports.addTodo = async (req, res) => {
-  const todo = await new Todo(req.body).save();
+  console.log('req.body');
+  console.log(req.body);
+  var todo = new Todo(req.body);
+
+
+
+  // const todo = await new Todo(req.body).save();
+
+  todo.save((err, todo) => {
+    if (err) {
+      console.log(`Error saving new todo: ${err} `);
+    }
+  })
   // req.flash('success', `Successfully Created ${todo.name}, please leave a review`);
   res.json(todo);
 };

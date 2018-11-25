@@ -11,17 +11,41 @@ import { ITodo } from '../shared/interfaces';
 export class TodosComponent implements OnInit {
   title: string;
   todos: ITodo[] = [];
+  newtodo = {
+    name: "",
+    comments: ""
+  }
   showNewTodo: boolean = false;
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.title = 'Todos';
     this.getTodos();
+
+    // this.dataService.getTodos().subscribe((data: ITodo[]) =>
+    //   this.todos = data);
+
   }
 
   showNewTodoSection(): void {
     this.showNewTodo = !this.showNewTodo;
   }
+
+  submit() {
+    console.log(this.newtodo);
+    console.log(this.newtodo);
+    this.dataService.insertTodo(this.newtodo)
+      .subscribe((todos: ITodo) => {
+        this.showNewTodo = false;
+        this.newtodo = {
+          name: "",
+          comments: ""
+        }
+        this.getTodos();
+      })
+
+  }
+
 
   getTodos() {
     this.dataService.getTodos().subscribe(

@@ -1,9 +1,9 @@
 export interface ITodo {
-  _id: string;
+  // _id: number;
   name: string;
-  label: string;
-  owner: string;
-  archived: boolean;
-  comments: string;
-  done: boolean;
+  //label: string;
+  // owner: string;
+  // archived: boolean;
+  // comments: string;
+  // done: boolean;
 }
