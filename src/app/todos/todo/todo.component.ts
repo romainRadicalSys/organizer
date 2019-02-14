@@ -10,7 +10,16 @@ export class TodoComponent implements OnInit {
   todos: any;
   newTodo: string;
 
-  constructor() {}
+  editTodo(data) {
+    console.log('data');
+    console.log(data);
 
-  ngOnInit() {}
+  }
+
+
+  constructor() { }
+
+  ngOnInit() {
+
+  }
 }

@@ -1,11 +1,24 @@
 <div class='todo'>
 
-  <mat-checkbox [(ngModel)]="todos.done">
-    <input type="text" value={{todos.name}}>
-  </mat-checkbox>
-  <i class="material-icons">
-    delete
-  </i>
 
+
+  <!-- <mat-form-field>
+    <input value={{todos.name}}>
+  </mat-form-field> -->
+
+  <div class="todo--section">
+    <mat-checkbox class='todo--input' [(ngModel)]="todos.done"></mat-checkbox>
+    <input matInput value={{todos.name}} placeholder="Placeholder">
+  </div>
+
+  <div class='todo-action-wrapper'>
+
+    <i class="material-icons">
+      delete
+    </i>
+    <i class="material-icons" (click)="editTodo(todos)">
+      edit
+    </i>
+  </div>
 
 </div>

@@ -11,6 +11,7 @@ const todoController = require('../controllers/todoController');
 // });
 router.get('/getTodos', todoController.getTodos);
 router.post('/addTodo', todoController.addTodo);
+router.put('/todo', todoController.editTodo);
 // router.post('/add', catchErrors(storeController.createStore));
 // router.post('/add/:id', catchErrors(storeController.updateStore));
 // router.get('/stores/:id/edit', catchErrors(storeController.editStore));

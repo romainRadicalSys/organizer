@@ -12,7 +12,8 @@ import { ITodo } from '../shared/interfaces';
 
 @Injectable()
 export class DataService {
-  baseUrl: string = 'api/getTodos';
+  //baseUrl: string = 'api/getTodos';
+  baseUrl: string = './mocks/todos.json';
   constructor(private http: Http) { }
 
   getTodos(): Observable<ITodo[]> {

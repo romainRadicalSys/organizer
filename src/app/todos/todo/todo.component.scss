@@ -1,3 +1,30 @@
-.example-margin {
-  margin: 0 10px;
+.todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo--section {
+    width: 100%;
+    display: flex;
+    background-color: darken(#3f51b5, 20%);
+    padding: 15px 20px;
+    input {
+        flex: 1;
+        color: white;
+        border: none;
+        background-color: inherit;
+    }
+    mat-checkbox {
+        flex: 0.5;
+        border: white 1px solid;
+    }
+}
+
+.todo-action-wrapper {
+    background-color: #e1e1e1;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }

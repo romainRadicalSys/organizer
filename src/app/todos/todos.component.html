@@ -7,7 +7,8 @@
 <form action="/api/addTodo" (ngSubmit)="submit()" method="POST" *ngIf='showNewTodo' class=todos--create>
 
   <mat-form-field class="example-form-field">
-    <input matInput type="text" name='name' id='name' placeholder="What do you want to get done" [(ngModel)]="newtodo.name">
+    <input matInput type="text" name='name' id='name' placeholder="What do you want to get done"
+      [(ngModel)]="newtodo.name">
   </mat-form-field>
   <mat-form-field class="example-form-field">
     <input matInput type="text" name='comments' id='comments' placeholder="Comments" [(ngModel)]="newtodo.comments">
@@ -22,6 +23,8 @@
   </div>
 </form>
 
-<ul *ngFor="let todo of todos">
-  <app-todo [todos]='todo'></app-todo>
-</ul>
+<div class='todos--wrap'>
+  <div *ngFor="let todo of todos">
+    <app-todo [todos]='todo' *ngIf="!todo.done"></app-todo>
+  </div>
+</div>
