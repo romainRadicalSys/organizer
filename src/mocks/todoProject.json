@@ -1,0 +1,24 @@
+[
+    {
+        "Name": "Programming",
+        "owner": "Romain",
+        "archived": false,
+        "projectID": 123
+    },
+    {
+        "name": "Car Maintenance",
+        "owner": "Romain",
+        "archived": false,
+        "projectID": 456
+    },
+    {
+        "name": "Home task",
+        "owner": "Romain",
+        "archived": 789
+    },
+    {
+        "name": "Sport",
+        "owner": "Romain",
+        "archived": 987
+    }
+]

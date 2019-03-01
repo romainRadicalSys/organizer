@@ -23,8 +23,40 @@
   </div>
 </form>
 
-<div class='todos--wrap'>
+
+<!-- <mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer mode="side" [(opened)]="opened">Drawer content
+    <mat-drawer-content>
+      <mat-list-item *ngFor='let project of todoProject'>
+        <app-project [projects]='project'></app-project>
+      </mat-list-item>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer-content>
+  </mat-drawer>
+
+</mat-drawer-container> -->
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <div *ngFor='let project of todoProject'>
+      <app-project [projects]='project'></app-project>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- <div class="example-sidenav-content">
+  <button type="button" mat-button (click)="drawer.toggle()">
+    Toggle sidenav
+  </button>
+</div> -->
+<!-- <div class='todos--wrap'>
   <div *ngFor="let todo of todos">
     <app-todo [todos]='todo' *ngIf="!todo.done"></app-todo>
   </div>
-</div>
+</div> -->

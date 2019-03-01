@@ -7,3 +7,7 @@ export interface ITodo {
   // comments: string;
   // done: boolean;
 }
+
+export interface IProject {
+  name: string;
+}

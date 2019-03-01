@@ -4,20 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {
-  MatButtonModule,
-  MatSidenavModule,
-  MatCheckboxModule,
-  MatMenuModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatCardModule,
-  MatDialogModule,
-  MatTableModule,
-  MatProgressSpinnerModule
-} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,30 +14,21 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { DataService } from './core/data.service';
 import { AdminModule } from './admin/admin.module';
 import { TodoComponent } from './todos/todo/todo.component';
+import { ProjectComponent } from './todos/project/project.component';
+import { MaterialModule } from './shared/material.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PathNotFoundComponent, TodosComponent, MainMenuComponent, TodoComponent],
+  declarations: [AppComponent, HomeComponent, PathNotFoundComponent, TodosComponent, MainMenuComponent, TodoComponent, ProjectComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCardModule,
-    MatDialogModule,
-    MatTableModule,
-    MatProgressSpinnerModule,
     HttpModule,
     AdminModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
