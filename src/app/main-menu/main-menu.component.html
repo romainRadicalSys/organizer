@@ -1,11 +1,40 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span class='tittle'>Organizer</span>
     <div class="menu--links">
-      <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
-      <a [routerLink]="['/todos']" routerLinkActive="router-link-active">Todos</a>
-      <a [routerLink]="['/login']" routerLinkActive="router-link-active">Log in</a>
-      <a [routerLink]="['/demos']" routerLinkActive="router-link-active">Demos</a>
+      <a mat-button class="docs-navbar-hide-small docs-button" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+      <a mat-button class="docs-navbar-hide-small docs-button" [routerLink]="['/todos']" routerLinkActive="router-link-active">Todos</a>
+      <a mat-button class="docs-navbar-hide-small docs-button" [routerLink]="['/login']" routerLinkActive="router-link-active">Log in</a>
+      <a mat-button class="docs-navbar-hide-small docs-button" [routerLink]="['/demos']" routerLinkActive="router-link-active">Demos</a>
     </div>
   </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar> -->
+
+
+
+<nav class="docs-navbar-header">
+  <a mat-button class="docs-button" routerLink="/" aria-label="Organiser">
+    <span>Organiser</span>
+  </a>
+  <a mat-button class="docs-navbar-hide-small docs-button" [routerLink]="['/home']"
+    routerLinkActive="router-link-active">Home</a>
+  <a mat-button class="docs-navbar-hide-small docs-button" [routerLink]="['/todos']"
+    routerLinkActive="router-link-active">Todos</a>
+
+  <a mat-button class="docs-navbar-hide-small docs-button" [routerLink]="['/demos']"
+    routerLinkActive="router-link-active">Demos</a>
+  <div class="flex-spacer"></div>
+  <!--<theme-picker></theme-picker>-->
+
+  <a mat-button class="docs-navbar-hide-small docs-button" [routerLink]="['/login']"
+    routerLinkActive="router-link-active">Log in</a>
+
+
+</nav>
+
+<nav class="docs-navbar docs-navbar-show-small">
+  <a mat-button class="docs-navbarlink" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+  <a mat-button class="docs-navbarlink" [routerLink]="['/todos']" routerLinkActive="router-link-active">Todos</a>
+  <a mat-button class="docs-navbarlink" [routerLink]="['/demos']" routerLinkActive="router-link-active">Demos</a>
+  <a mat-button class="docs-navbarlink" [routerLink]="['/login']" routerLinkActive="router-link-active">Log in</a>
+</nav>

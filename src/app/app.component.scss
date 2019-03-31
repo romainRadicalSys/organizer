@@ -1,8 +1,8 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
-html,
-body {
-  margin: 0px;
-  background-color: rgb(255, 254, 252);
+app-main-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
-

@@ -16,9 +16,10 @@ import { AdminModule } from './admin/admin.module';
 import { TodoComponent } from './todos/todo/todo.component';
 import { ProjectComponent } from './todos/project/project.component';
 import { MaterialModule } from './shared/material.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PathNotFoundComponent, TodosComponent, MainMenuComponent, TodoComponent, ProjectComponent],
+  declarations: [AppComponent, HomeComponent, PathNotFoundComponent, TodosComponent, MainMenuComponent, TodoComponent, ProjectComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

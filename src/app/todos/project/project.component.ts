@@ -10,6 +10,10 @@ export class ProjectComponent implements OnInit {
   projects: any;
   constructor() { }
 
+  projectSelect(project) {
+    console.log(project);
+  }
+
   ngOnInit() {
   }
 

@@ -14,7 +14,8 @@ import {
   MatListModule,
   MatDialogModule,
   MatTableModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatExpansionModule
 } from '@angular/material';
 
 @NgModule({
@@ -31,6 +32,7 @@ import {
     MatDialogModule,
     MatTableModule,
     MatListModule,
+    MatExpansionModule,
     MatProgressSpinnerModule
   ],
   exports: [MatButtonModule,
@@ -45,6 +47,7 @@ import {
     MatDialogModule,
     MatTableModule,
     MatListModule,
+    MatExpansionModule,
     MatProgressSpinnerModule],
   declarations: []
 })

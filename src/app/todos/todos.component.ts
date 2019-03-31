@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { DataService } from '../core/data.service';
 import { ITodo } from '../shared/interfaces';
@@ -12,7 +12,9 @@ import { IProject } from '../shared/interfaces';
 export class TodosComponent implements OnInit {
   title: string;
   todos: ITodo[] = [];
+  @Input()
   opened: boolean;
+  expanded: any;
   todoProject: IProject[] = [];
   newtodo = {
     name: "",
@@ -21,13 +23,14 @@ export class TodosComponent implements OnInit {
   showFiller = true;
   id: number;
   showNewTodo: boolean = false;
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.title = 'Todos';
     this.getTodos(this.id);
     this.getTodoProject();
-
+    this.opened = true;
     // this.dataService.getTodos().subscribe((data: ITodo[]) =>
     //   this.todos = data);
 
@@ -53,10 +56,12 @@ export class TodosComponent implements OnInit {
   }
 
 
-  getTodos(id: number) {
-    this.dataService.getTodos(id).subscribe(
+  getTodos(id) {
+    this.dataService.getTodos(123).subscribe(
       (todos: ITodo[]) => {
         this.todos = todos;
+        console.log('this.todos9999');
+        console.log(this.todos);
       },
       (err: any) => console.log(err),
       () => console.log('getTodos retrieved todos')

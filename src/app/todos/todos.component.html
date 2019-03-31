@@ -1,4 +1,68 @@
-<div class='todos--header' *ngIf='!showNewTodo'>
+<mat-sidenav-container class='project--sidenav-container'>
+  <mat-sidenav class='project--sidenav' #sidenav mode="side" [(opened)]="opened">
+    <div class="docs-component-viewer-nav">
+      <div class="docs-component-viewer-nav-content">
+        <nav>
+          <mat-accordion>
+            <mat-expansion-panel [(expanded)]="opened">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Project
+                </mat-panel-title>
+                <mat-panel-description>
+                  List of projects
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <ul id="panel-forms" *ngFor='let project of todoProject'>
+                <li>
+                  <app-project [projects]='project'></app-project>
+                </li>
+              </ul>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </nav>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <!-- <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p> -->
+
+    <!-- <div class='todos--header' *ngIf='!showNewTodo'>
+      <i class="material-icons" (click)='showNewTodoSection()'>
+        add
+      </i>
+      <span> add Task </span>
+    </div>
+    <form action="/api/addTodo" (ngSubmit)="submit()" method="POST" *ngIf='showNewTodo' class=todos--create>
+
+      <mat-form-field class="example-form-field">
+        <input matInput type="text" name='name' id='name' placeholder="What do you want to get done"
+          [(ngModel)]="newtodo.name">
+      </mat-form-field>
+      <mat-form-field class="example-form-field">
+        <input matInput type="text" name='comments' id='comments' placeholder="Comments" [(ngModel)]="newtodo.comments">
+      </mat-form-field>
+      <button mat-button *ngIf="newTodo" matSuffix mat-icon-button aria-label="Clear" (click)="newTodo=''">
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <div class='btn-group' *ngIf='showNewTodo'>
+        <button mat-raised-button color="warn" type='submit'>Add</button>
+        <button mat-raised-button color="accent" (click)='showNewTodoSection()'>Cancel</button>
+      </div>
+    </form> -->
+    <div class='todos--wrap'>
+      <div *ngFor="let todo of todos">
+        <app-todo [todos]='todo' *ngIf="!todo.done"></app-todo>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!-- <div class='todos--header' *ngIf='!showNewTodo'>
   <i class="material-icons" (click)='showNewTodoSection()'>
     add
   </i>
@@ -21,7 +85,7 @@
     <button mat-raised-button color="warn" type='submit'>Add</button>
     <button mat-raised-button color="accent" (click)='showNewTodoSection()'>Cancel</button>
   </div>
-</form>
+</form> -->
 
 
 <!-- <mat-drawer-container class="example-container" autosize>
@@ -37,19 +101,7 @@
   </mat-drawer>
 
 </mat-drawer-container> -->
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-    <div *ngFor='let project of todoProject'>
-      <app-project [projects]='project'></app-project>
-    </div>
-  </mat-sidenav>
 
-  <mat-sidenav-content>
-
-    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
-
-  </mat-sidenav-content>
-</mat-sidenav-container>
 <!-- <div class="example-sidenav-content">
   <button type="button" mat-button (click)="drawer.toggle()">
     Toggle sidenav
